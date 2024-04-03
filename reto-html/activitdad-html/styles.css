@@ -1,0 +1,48 @@
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  height: 100000px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  justify-content: start;
+  align-items: center
+  ;
+}
+
+.text {
+  width: 680px;
+}
+.something {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 680px;
+}
+
+.hero-text {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.dots {
+  font-size: 2rem;
+  letter-spacing: 40px;
+  font-weight: 900;
+  margin: 50px
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+img {
+  width: 680px;
+}
+
