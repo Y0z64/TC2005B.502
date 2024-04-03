@@ -1,7 +1,10 @@
 .operations-box {
-    background-color: #333333;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    background-color: hsl(0, 0%, 20%);
     text-align: right;
-    padding: 10px 0px;
+    padding: 20px;
     border: 2px solid gray;
     border-radius: 25px;
     width: 100%;
@@ -23,7 +26,7 @@ main {
 
 .button-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
 }
 
@@ -45,4 +48,12 @@ main {
 
 .operator-button:hover {
     background-color: #740d0d;
+}
+
+a {
+    /* Remove all styles */
+    all: unset;
+    width: 140px;
+    display: flex;
+    justify-content: center;
 }
