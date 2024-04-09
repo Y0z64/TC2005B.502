@@ -14,11 +14,19 @@
 
         <img src="https://www.thoughtco.com/thmb/094YF3bQBiuV_13n92GFQZWkM7k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/JavaScript-58acbb8a3df78c345bad32c2.jpg" alt="">
         
+        <p>There are many ways to declare values on javascript, some methods allow you to declare very flexible (but risky) global scope variables while others only let you declare them in a block scope. This is a guide on how variables and constants work in javascript</p>
+
         <h2>var</h2>
         <p>The <code>var</code> keyword is used to declare a variable in JavaScript. It has function scope.</p>
         <code class="code-block">var foo</code>
         <p>This is how you modify the value in a variable</p>
         <code class="code-block">var foo = "bar"  <br> foo = "foobar" </code>
+        <p>The use of bar is not recomended for many reasonsm, including:</p>
+        <ul>
+            <li>Declares the value in <code>Global scope</code> instead of local</li>
+            <li>Always references the same variable even when redeclaring if it has the same name</li>
+            <li>Other issues like <code>Hoisiting</code> etc.</li>
+        </ul>
         
         <h2>let</h2>
         <p>The <code>let</code> keyword is also used to declare a variable. However, it has block scope.</p>
@@ -27,6 +35,59 @@
         <h2>const</h2>
         <p>The <code>const</code> keyword is used to declare a variable that cannot be reassigned. It also has block scope.</p>
         <code class="code-block">const foo;</code>
+
+    <section>
+        <h2>Scopes</h2>
+        <p>Variables in JavaScript can exist within different scopes, affecting where they can be accessed and modified.</p>
+    
+        <h3>Global Scope</h3>
+        <p>In global scope, variables are declared outside of any functions or blocks. They can be accessed and modified
+            from anywhere within the program.</p>
+        <pre><code>
+// Example of a variable in global scope declared with var
+var globalVar = 'I am global';
+
+// Example of a variable in global scope declared with let
+let globalLet = 'I am also global';
+
+// Example of a variable in global scope declared with const
+const globalConst = 'I am also global, but immutable';
+
+function exampleFunction() {
+    // Accessing global variables from within a function
+    console.log(globalVar); // Outputs: I am global
+    console.log(globalLet); // Outputs: I am also global
+    console.log(globalConst); // Outputs: I am also global, but immutable
+}
+exampleFunction();
+            </code></pre>
+    
+        <h3>Local Scope</h3>
+        <p>In local scope, variables are declared within a function or block. They can only be accessed and modified from
+            within that function or block.</p>
+        <pre><code>
+function exampleFunction() {
+    // Local variable declared within the function using var
+    var localVarVar = 'I am local (var)';
+    
+    // Local variable declared within the function using let
+    let localVarLet = 'I am local (let)';
+    
+    // Local variable declared within the function using const
+    const localVarConst = 'I am local (const)';
+
+    console.log(localVarVar); // Outputs: I am local (var)
+    console.log(localVarLet); // Outputs: I am local (let)
+    console.log(localVarConst); // Outputs: I am local (const)
+}
+exampleFunction();
+
+// Attempting to access local variables outside of their scope will result in an error
+// console.log(localVarVar); // Throws an error: localVarVar is not defined
+// console.log(localVarLet); // Throws an error: localVarLet is not defined
+// console.log(localVarConst); // Throws an error: localVarConst is not defined
+            </code></pre>
+    </section>
     </main>
 </body>
 </html>
